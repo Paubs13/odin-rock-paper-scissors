@@ -13,29 +13,29 @@ function getComputerChoice(){
 
 function game(userChoice){
     let computerChoice = getComputerChoice()
-    let winMsg = console.log(`Computer picked ${computerChoice} hence:
-        YOU WIN`);
-    let loseMsg = console.log(`Computer picked ${computerChoice} hence:
-        YOU LOSE`);
+    let winMsg = `Computer picked ${computerChoice} hence:
+        YOU WIN`;
+    let loseMsg = `Computer picked ${computerChoice} hence:
+        YOU LOSE`;
     if (userChoice == computerChoice){
-        console.log(`Computer picked ${computerChoice};
-            Because of that, the game it's a TIE`);
+        console.log(`Computer picked ${computerChoice}
+        Because of that, the game it's a TIE`);
     }
     else {
         if ( userChoice || computerChoice == "rock" && userChoice || computerChoice == "paper") {
             if (userChoice == "paper") {
-                winMsg;
+                console.log(winMsg);
             }
-            else {
-                loseMsg;
+            else if (userChoice == "rock") {
+                console.log(loseMsg);
             }
         }
         if (userChoice || computerChoice == "rock" && userChoice || computerChoice == "scissors") {
-            if(userChoice != "rock") {
-                loseMsg;
+            if(userChoice == "scissors") {
+                console.log(loseMsg);
             }
-            else {
-                winMsg;
+            else if (userChoice == "rock") {
+                console.log(winMsg);
             }
         }
     }
